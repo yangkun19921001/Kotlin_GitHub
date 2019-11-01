@@ -100,6 +100,11 @@ object AccountManager {
                 println("login->$it")
             }
 
+    /**
+     * 退出 github
+     */
+    fun logout(){}
+
 
     private fun notifyLogin(user: User) {
         onAccountStateChangeLister.forEach {

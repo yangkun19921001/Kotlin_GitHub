@@ -18,4 +18,7 @@ abstract class BasePresenter<out V: IMvpView<BasePresenter<V>>>: IPresenter<V> {
     override fun onStop() = Unit
     override fun onResume() = Unit
     override fun onPause() = Unit
+
+
+    protected val TAG = javaClass.simpleName
 }

@@ -1,7 +1,7 @@
 package com.bennyhuo.mvp.impl
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.support.v4.app.Fragment
 import com.bennyhuo.mvp.IMvpView
 import com.bennyhuo.mvp.IPresenter
 import java.lang.reflect.ParameterizedType

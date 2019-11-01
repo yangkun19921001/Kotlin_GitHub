@@ -1,4 +1,3 @@
-package com.bennyhuo.github.settings
 
 import com.devyk.common.App
 import com.devyk.common.config.UserInfo
@@ -13,12 +12,12 @@ object Settings {
             lastPageIdString = App.getInstance().resources.getResourceEntryName(value)
         }
 
-//    val defaultPage
-//        get() = if(UserInfo.isLoginIn()) defaultPageForUser else defaultPageForVisitor
+    val defaultPage
+        get() = if(UserInfo.isLoginIn()) defaultPageForUser else defaultPageForVisitor
 
-//    private var defaultPageForUser by pref(R.id.navRepos)
-//
-//    private var defaultPageForVisitor by pref(R.id.navRepos)
+    private var defaultPageForUser by pref(R.id.navRepos)
+
+    private var defaultPageForVisitor by pref(R.id.navRepos)
 
     private var lastPageIdString by pref("")
 

@@ -2,6 +2,7 @@ package com.devyk.kotlin_github.mvp.p
 
 import com.bennyhuo.mvp.impl.BasePresenter
 import com.devyk.common.config.UserInfo
+import com.devyk.kotlin_github.BuildConfig
 import com.devyk.kotlin_github.mvp.m.AccountManager
 import com.devyk.kotlin_github.mvp.v.LoginActivity
 
@@ -42,6 +43,7 @@ class LoginPresenter : BasePresenter<LoginActivity>() {
     //进行用户信息重绘
     override fun onResume() {
         super.onResume()
+            v.onDataInit(UserInfo.username,UserInfo.password)
 
     }
 }

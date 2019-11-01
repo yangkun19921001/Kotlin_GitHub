@@ -1,7 +1,7 @@
 package com.bennyhuo.mvp.impl
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.support.v7.app.AppCompatActivity
 import com.bennyhuo.mvp.IMvpView
 import com.bennyhuo.mvp.IPresenter
 import java.lang.reflect.ParameterizedType
@@ -12,6 +12,8 @@ import kotlin.reflect.full.primaryConstructor
 import kotlin.reflect.jvm.jvmErasure
 
 abstract class BaseActivity<out P : BasePresenter<BaseActivity<P>>> : AppCompatActivity(), IMvpView<P> {
+
+    protected val TAG = javaClass.simpleName;
 
     final override val p: P
 

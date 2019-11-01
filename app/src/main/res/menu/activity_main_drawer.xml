@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navRepos"
+            android:icon="@drawable/ic_repository"
+            android:title="Repositories" />
+        <item
+            android:id="@+id/navPeople"
+            android:icon="@drawable/ic_people"
+            android:title="People" />
+        <item
+            android:id="@+id/navIssue"
+            android:icon="@drawable/ic_issue"
+            android:title="Issues" />
+        <item
+            android:id="@+id/navAbout"
+            android:icon="@drawable/ic_about_us"
+            android:title="About" />
+    </group>
+</menu>

@@ -2,12 +2,10 @@ package com.devyk.kotlin_github
 
 import android.app.Application
 import android.content.Context
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.widget.Toolbar
-import androidx.multidex.MultiDex
+import android.support.multidex.MultiDex
+import android.support.v7.app.AppCompatDelegate
 import com.bennyhuo.swipefinishable.SwipeFinishable
 import com.devyk.common.App
-import com.google.android.material.appbar.AppBarLayout
 
 /**
  * <pre>
