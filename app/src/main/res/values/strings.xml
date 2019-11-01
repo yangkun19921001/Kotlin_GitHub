@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Kotlin_GitHub</string>
+
+    <string name="prompt_email">请输入你的 GitHub 账号</string>
+    <string name="prompt_password">请输入你的 GitHub 密码</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_email">This user address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="open_source_licenses"><a>Open Source Licenses</a></string>
+    <string name="click_to_login">Click to Login</string>
+
+    <string name="repo_description_template">[%1$s](%2$s)/[%3$s](%4$s) \n\n Created by [%5$s](%6$s) on %7$s</string>
+    <string name="loginLable">GitHub</string>
 </resources>

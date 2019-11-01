@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DetailItemView">
+        <attr name="item_title" format="string" />
+        <attr name="item_content" format="string" />
+        <attr name="item_icon" format="reference" />
+        <attr name="item_op_icon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AppBarLayoutBehavior">
+        <attr name="targetTop" format="dimension"/>
+        <attr name="targetLeft" format="dimension"/>
+        <attr name="originalLeft" format="dimension"/>
+        <attr name="originalTop" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="sideBarBackground" format="reference"/>
+</resources>

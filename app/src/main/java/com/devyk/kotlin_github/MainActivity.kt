@@ -3,6 +3,7 @@ package com.devyk.kotlin_github
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import kotlin.properties.ReadWriteProperty
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.d(TAG,"init first init")
+
     }
 }
