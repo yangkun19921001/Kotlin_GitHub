@@ -6,9 +6,9 @@ import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import com.devyk.kotlin_github.R
 import com.devyk.kotlin_github.mvp.v.AboutFragment
-import com.devyk.kotlin_github.mvp.v.MyIssueFragment
-import com.devyk.kotlin_github.mvp.v.PeopleFragment
-import com.devyk.kotlin_github.mvp.v.RepoFragment
+import com.devyk.kotlin_github.mvp.v.issue.MyIssueFragment
+import com.devyk.kotlin_github.mvp.v.people.PeopleFragment
+import com.devyk.kotlin_github.mvp.v.repo.RepoFragment
 
 
 class NavViewItem private constructor(val groupId: Int = 0, val title: String, @DrawableRes val icon: Int, val fragmentClass: Class<out Fragment>, val arguements: Bundle = Bundle()){

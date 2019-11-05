@@ -6,9 +6,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import org.jetbrains.anko.inputMethodManager
 
-/**
- * Created by benny on 6/23/17.
- */
+
 fun Context.toggleSoftInput() {
     inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS)
 }

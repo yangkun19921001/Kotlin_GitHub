@@ -54,7 +54,7 @@ class NavigationController(
         navigationView.doOnLayoutAvailable {
             navigationView.apply {
                 usernameView.text = user?.login ?: "请登录"
-                emailView.text = user?.email ?: "bennyhuo@kotliner.cn"
+                emailView.text = user?.email ?: "yang1001yk@mail.com"
                 if (user == null) {
                     avatarView.imageResource = R.drawable.ic_github
                 } else {

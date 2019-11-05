@@ -3,6 +3,7 @@ package com.devyk.kotlin_github.mvp.m
 import com.bennyhuo.github.network.entities.User
 import com.devyk.common.config.UserInfo
 import com.devyk.common.ext.fromJson
+import com.devyk.common.ext.otherwise
 import com.devyk.common.ext.pref
 import com.devyk.common.ext.yes
 import com.devyk.kotlin_github.api.AuthService
@@ -10,9 +11,11 @@ import com.devyk.kotlin_github.api.UserService
 import com.devyk.kotlin_github.mvp.m.entity.AuthorizationReq
 import com.devyk.kotlin_github.mvp.m.entity.AuthorizationRsp
 import com.google.gson.Gson
-import rx.Observable
-import rx.Observer
-import rx.android.schedulers.AndroidSchedulers
+import io.reactivex.Observable
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import retrofit2.HttpException
 
 /**
  * <pre>
@@ -67,8 +70,6 @@ object AccountManager {
     }
 
 
-
-
     /**
      * 定义登录接口,V 层调用
      */
@@ -93,7 +94,7 @@ object AccountManager {
                 UserInfo.token = it.token
                 UserInfo.authID = it.id
                 UserService.getAuthenticatedUser()
-            }.observeOn(AndroidSchedulers.mainThread())
+            }
             .map {
                 currentUser = it
                 notifyLogin(it as User)
@@ -103,7 +104,18 @@ object AccountManager {
     /**
      * 退出 github
      */
-    fun logout(){}
+    fun  logout() =
+        AuthService.deleteAuthorization(UserInfo.authID)
+            .doOnNext {
+                it.isSuccessful.yes {
+                    UserInfo.authID = -1
+                    UserInfo.token = ""
+                    currentUser = null
+                    notifyLogout()
+                }.otherwise {
+                    throw HttpException(it)
+                }
+            }
 
 
     private fun notifyLogin(user: User) {

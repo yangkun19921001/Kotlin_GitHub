@@ -20,8 +20,8 @@ android {
         applicationId "com.devyk.kotlin_github"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 1
-        versionName "1.0.3"
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //dex 分包
@@ -46,6 +46,10 @@ dependencies {
 
     //Dex 分包
     implementation 'com.android.support:multidex:1.0.1'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+
+    implementation 'com.github.jdsjlzx:LRecyclerView:1.5.0'
 
 
     }

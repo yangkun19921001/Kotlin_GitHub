@@ -3,9 +3,7 @@ package com.devyk.kotlin_github.mvp.m.entity
 
 import com.devyk.common.anno.PoKo
 
-/**
- * Created by benny on 6/21/17.
- */
+
 @PoKo
 data class AuthorizationReq(var scopes: List<String> = Configs.Account.SCOPES,
                             var note: String = Configs.Account.note,

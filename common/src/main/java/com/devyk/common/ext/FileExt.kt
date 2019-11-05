@@ -5,9 +5,7 @@ import java.io.File
 
 private const val TAG = "FileExt"
 
-/**
- * Created by benny on 6/20/17.
- */
+
 fun File.ensureDir(): Boolean {
     try {
         isDirectory.no {

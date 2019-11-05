@@ -9,5 +9,11 @@ package com.devyk.kotlin_github.config
  *     desc    : This is Contacts
  * </pre>
  */
-interface Contacts {
+class Contacts {
+
+   public val REQUIRED_TYPE: String
+        get() = "type"
+
+    val OPTIONAL_LOGIN: String
+        get() = "login"
 }

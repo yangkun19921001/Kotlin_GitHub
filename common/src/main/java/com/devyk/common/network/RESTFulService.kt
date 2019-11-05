@@ -6,13 +6,16 @@ import com.devyk.common.ext.ensureDir
 import com.devyk.common.network.interceptor.AcceptInterceptor
 import com.devyk.common.network.interceptor.AuthInterceptor
 import com.devyk.common.network.interceptor.CacheInterceptor
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory2
 import retrofit2.converter.gson.GsonConverterFactory
-import rx.schedulers.Schedulers
 import java.io.File
 import java.util.concurrent.TimeUnit
 
@@ -48,8 +51,8 @@ private val cacheFile by lazy {
  */
 val RETROFIT by lazy {
     Retrofit.Builder()
-            //支持 Rxjava
-        .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io()))
+            //支持 Rxjava2 默认添加 子线程 + 主线程
+        .addCallAdapterFactory(RxJava2CallAdapterFactory2.createWithScheduler(Schedulers.io(),AndroidSchedulers.mainThread()))
             //支持数据转换
         .addConverterFactory(GsonConverterFactory.create())
         .client(OKHTTPCLIENT)

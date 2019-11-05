@@ -3,12 +3,12 @@ package com.devyk.kotlin_github.api
 import com.devyk.common.network.RETROFIT
 import com.devyk.kotlin_github.mvp.m.entity.AuthorizationReq
 import com.devyk.kotlin_github.mvp.m.entity.AuthorizationRsp
+import io.reactivex.Observable
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.PUT
 import retrofit2.http.Path
-import rx.Observable
 
 interface AuthApi{
 

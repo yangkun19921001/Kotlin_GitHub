@@ -1,4 +1,4 @@
-package com.devyk.kotlin_github.mvp.v
+package com.devyk.kotlin_github.mvp.v.login
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -13,6 +13,7 @@ import com.devyk.common.ext.yes
 import com.devyk.kotlin_github.R
 import com.devyk.kotlin_github.config.Themer
 import com.devyk.kotlin_github.mvp.p.LoginPresenter
+import com.devyk.kotlin_github.mvp.v.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.app_bar_simple.*
 import org.jetbrains.anko.sdk15.coroutines.onClick
@@ -40,7 +41,6 @@ class LoginActivity : BaseActivity<LoginPresenter>() {
         signInButton.onClick {
             onLogin()
         }
-
     }
 
     fun onLogin() {
@@ -103,4 +103,9 @@ class LoginActivity : BaseActivity<LoginPresenter>() {
         username.setText(name)
         password.setText(pwd)
     }
+
+
+
+
+
 }

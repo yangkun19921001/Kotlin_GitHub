@@ -2,9 +2,8 @@ package com.devyk.kotlin_github.mvp.p
 
 import com.bennyhuo.mvp.impl.BasePresenter
 import com.devyk.common.config.UserInfo
-import com.devyk.kotlin_github.BuildConfig
 import com.devyk.kotlin_github.mvp.m.AccountManager
-import com.devyk.kotlin_github.mvp.v.LoginActivity
+import com.devyk.kotlin_github.mvp.v.login.LoginActivity
 
 /**
  * <pre>

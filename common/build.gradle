@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -35,7 +35,6 @@ dependencies {
 
     api"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-    implementation "com.android.support:support-fragment:$support_version"
 
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
@@ -44,12 +43,12 @@ dependencies {
     api "com.android.support:appcompat-v7:28.0.0"
 
 
-    api 'com.squareup.okhttp3:logging-interceptor:3.8.0'
-    api 'com.squareup.okhttp3:okhttp:3.8.0'
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
-    api 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    api 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0'
-    api 'io.reactivex:rxandroid:1.2.1'
+    api "com.squareup.okhttp3:logging-interceptor:3.8.0"
+    api "com.squareup.okhttp3:okhttp:3.8.0"
+    api "com.squareup.retrofit2:converter-gson:2.3.0"
+    api "com.squareup.retrofit2:adapter-rxjava2:2.6.0"
+    api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0"
+    api "io.reactivex.rxjava2:rxandroid:2.1.1"
     api "io.reactivex.rxjava2:rxjava:2.2.13"
     api 'com.github.bumptech.glide:glide:4.3.1'
 
@@ -92,5 +91,15 @@ dependencies {
     api "org.jetbrains.anko:anko-sdk15:$anko_version"
 
     api 'org.slf4j:slf4j-api:1.7.21'
+
+    /* 源码地址：https://github.com/enbandari/RichText；这个项目是从 https://github.com/zzhoujay/RichText 修改而来的
+<p>原因：原框架使用了  Android 系统的 Html 解析器，对 pre 和 code 没有支持
+框架中使用了修改自 https://github.com/Pixplicity/HtmlCompat 的 Html 解析器
+*/
+    implementation('com.github.enbandari.RichText:richtext:e85882c698') {
+        exclude(group: "com.android.support")
+    }
+
+
 
 }

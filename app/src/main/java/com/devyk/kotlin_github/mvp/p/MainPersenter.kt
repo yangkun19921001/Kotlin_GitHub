@@ -1,7 +1,10 @@
 package com.devyk.kotlin_github.mvp.p
 
+import com.bennyhuo.common.log.logger
 import com.bennyhuo.mvp.impl.BasePresenter
+import com.devyk.kotlin_github.mvp.m.AccountManager
 import com.devyk.kotlin_github.mvp.v.MainActivity
+import org.jetbrains.anko.toast
 
 /**
  * <pre>
@@ -13,5 +16,13 @@ import com.devyk.kotlin_github.mvp.v.MainActivity
  * </pre>
  */
 class MainPersenter : BasePresenter<MainActivity>() {
+    fun logout() {
+        AccountManager.logout()
+            .subscribe({
+                v.onSuccess()
+            }, {
+                v.onError(it)
+            })
+    }
 
 }
