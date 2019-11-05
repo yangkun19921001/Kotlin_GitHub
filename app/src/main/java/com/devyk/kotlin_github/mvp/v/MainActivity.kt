@@ -5,6 +5,7 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import com.bennyhuo.common.log.logger
 import com.bennyhuo.github.network.entities.User
+import com.bennyhuo.github.view.widget.ActionBarController
 import com.bennyhuo.mvp.impl.BaseActivity
 import com.devyk.common.config.UserInfo
 import com.devyk.common.ext.*
@@ -16,7 +17,6 @@ import com.devyk.kotlin_github.mvp.m.AccountManager
 import com.devyk.kotlin_github.mvp.m.OnAccountStateChangeLister
 import com.devyk.kotlin_github.mvp.p.MainPersenter
 import com.devyk.kotlin_github.mvp.v.login.LoginActivity
-import com.devyk.kotlin_github.widget.ActionBarController
 import com.devyk.kotlin_github.widget.NavigationController
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*

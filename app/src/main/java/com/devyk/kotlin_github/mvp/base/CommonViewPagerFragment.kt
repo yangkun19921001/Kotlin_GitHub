@@ -71,25 +71,17 @@ abstract class CommonViewPagerFragment : Fragment(), OnAccountStateChangeLister,
         )
     }
 
+
     override fun onLogin(user: User) {
-        viewPageAdapter.fragmentPages.let {
-            if (it.size > 0){
-                it.clear()
-            }else{
-                it.addAll(getFragmentPagesLoggedIn())
-            }
-        }
+        viewPageAdapter.fragmentPages.clear()
+        viewPageAdapter.fragmentPages.addAll(getFragmentPagesLoggedIn())
     }
 
     override fun onLogOut() {
-        viewPageAdapter.fragmentPages.let {
-            if (it.size > 0){
-                it.clear()
-            }else{
-                it.addAll(getFragmentPagesNotLoggedIn())
-            }
-        }
+        viewPageAdapter.fragmentPages.clear()
+        viewPageAdapter.fragmentPages.addAll(getFragmentPagesNotLoggedIn())
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

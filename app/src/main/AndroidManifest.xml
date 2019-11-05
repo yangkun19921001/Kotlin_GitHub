@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".mvp.v.MainActivity">
         </activity>
+        <activity android:name=".mvp.v.RepoDetailActivity"/>
     </application>
 
 </manifest>

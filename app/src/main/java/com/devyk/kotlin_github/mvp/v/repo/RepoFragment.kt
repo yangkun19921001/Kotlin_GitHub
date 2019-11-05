@@ -1,8 +1,11 @@
 package com.devyk.kotlin_github.mvp.v.repo
 
+import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.bennyhuo.mvp.impl.BaseFragment
-import com.devyk.kotlin_github.mvp.p.RepoPersenter
+import com.devyk.kotlin_github.mvp.base.CommonViewPagerFragment
+import com.devyk.kotlin_github.mvp.base.FragmentPage
+import com.devyk.kotlin_github.mvp.m.AccountManager
 
 
 /**
@@ -14,15 +17,16 @@ import com.devyk.kotlin_github.mvp.p.RepoPersenter
  *     desc    : This is RepoFragment
  * </pre>
  */
-class RepoFragment : BaseFragment<RepoPersenter>() {
-    override fun onRequest() {
+class RepoFragment : CommonViewPagerFragment() {
+    override fun getFragmentPagesLoggedIn(): List<FragmentPage> =
+        listOf(
+            FragmentPage(RepoListFragment().apply {
+                arguments = Bundle().apply { putParcelable("user", AccountManager.currentUser) }
+            }, "My"),
+            FragmentPage(RepoListFragment(), "All")
+        )
+
+    override fun getFragmentPagesNotLoggedIn(): List<FragmentPage> = listOf(FragmentPage(RepoListFragment(), "All"))
 
 
-    }
-
-    override fun onSuccess() {
-    }
-
-    override fun onError(error: Throwable) {
-    }
 }

@@ -1,4 +1,4 @@
-package com.devyk.kotlin_github.widget
+package com.bennyhuo.github.view.widget
 
 import android.database.DataSetObserver
 import android.support.design.widget.TabLayout
@@ -7,32 +7,19 @@ import android.view.View
 import com.devyk.common.utils.Weak
 import com.devyk.kotlin_github.mvp.v.MainActivity
 import kotlinx.android.synthetic.main.app_bar_main.*
-import java.lang.ref.WeakReference
 
-class ActionBarController(mainActivity: MainActivity) {
+class ActionBarController(val mainActivity: MainActivity) {
 
-
-    /**
-     * 使用弱引用对 MainActivity 包裹，避免内存泄漏
-     */
-    var activity by Weak<MainActivity>(
-        initializer = { mainActivity }
-    )
-
-
-    /**
-     * 初始化 tabLayout
-     */
-    private val tablayout by lazy {
-        activity?.tabLayout
+    private val context  by Weak<MainActivity> {
+        mainActivity
     }
 
+    private val tab by lazy {
+        context!!.tabLayout
+    }
 
+    class ViewPagerDataSetObserver(val tabLayout: TabLayout) : DataSetObserver() {
 
-    /**
-     * 定义一个观察者模式
-     */
-    class ViewPagerDataSetObserver(val tabLayout: TabLayout?) : DataSetObserver() {
         var viewPager: ViewPager? = null
             set(value) {
                 viewPager?.adapter?.unregisterDataSetObserver(this)
@@ -40,31 +27,25 @@ class ActionBarController(mainActivity: MainActivity) {
                 field = value
             }
 
-        /**
-         * 观察到改变，动态更新布局
-         */
         override fun onChanged() {
             super.onChanged()
-            viewPager?.run {
-                //传递 it
-                if (viewPager?.adapter?.count ?: 0 <= 1) {
-                    tabLayout?.visibility = View.GONE
+            viewPager?.let { viewPager ->
+                if (viewPager.adapter?.count ?: 0 <= 1) {
+                    tabLayout.visibility = View.GONE
                 } else {
-                    tabLayout?.visibility = View.VISIBLE
-                    tabLayout?.tabMode = if(viewPager?.adapter?.count?:0 > 3) TabLayout.MODE_SCROLLABLE else TabLayout.MODE_FIXED
+                    tabLayout.visibility = View.VISIBLE
+                    tabLayout.tabMode = if (viewPager.adapter?.count ?: 0 > 3) TabLayout.MODE_SCROLLABLE else TabLayout.MODE_FIXED
                 }
             }
         }
     }
 
-
     private val dataSetObserver by lazy {
-        ViewPagerDataSetObserver(tablayout)
+        ViewPagerDataSetObserver(tab)
     }
 
-    fun setupWithViewPager(viewPager: ViewPager?){
-        viewPager.let { dataSetObserver::viewPager ::set}.run { tablayout?.visibility = View.GONE }
-        tablayout?.setupWithViewPager(viewPager);
+    fun setupWithViewPager(viewPager: ViewPager?) {
+        viewPager?.let(dataSetObserver::viewPager::set)?: run{ tab.visibility = View.GONE }
+        tab.setupWithViewPager(viewPager)
     }
-
 }

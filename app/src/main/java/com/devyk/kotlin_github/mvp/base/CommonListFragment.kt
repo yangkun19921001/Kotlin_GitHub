@@ -103,6 +103,7 @@ abstract class CommonListFragment<DataType, out Presenter : CommonListPresenter<
     fun onDataInitWithError(error: String) {
         showError("访问出错：$error")
 
+
     }
 
     fun onDataRefreshWithNothing() {

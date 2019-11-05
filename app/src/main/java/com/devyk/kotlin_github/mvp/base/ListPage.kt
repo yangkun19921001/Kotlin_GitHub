@@ -38,15 +38,12 @@ abstract class ListPage<DataType> : DataProvider<DataType> {
         }
 
     fun loadFromFirst(pageCount: Int = currentPage) =
-
-
         Observable.range(1, pageCount)
             //concatMap() 转发出来的事件是有序的，而 flatMap() 是无序的
             .concatMap {
                 getData(it)
             }.doOnError {
                 logger.error("loadFromFirst,pageCount=$pageCount", it)
-
                 //与 scan() 操作符的作用也是将发送数据以一定逻辑聚合起来，
                 // 这两个的区别在于 scan() 每处理一次数据就会将事件发送给观察者，
                 // 而 reduce() 会将所有数据聚合在一起才会发送事件给观察者。

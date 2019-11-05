@@ -26,4 +26,7 @@ class CommonViewPageAdapter(childFragmentManager: FragmentManager) : FragmentPag
         return PagerAdapter.POSITION_NONE
     }
 
+    override fun getPageTitle(position: Int): CharSequence? {
+        return fragmentPages[position].title
+    }
 }
