@@ -2,6 +2,7 @@ package com.devyk.kotlin_github.adapter
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.devyk.common.App
@@ -13,7 +14,6 @@ import com.devyk.kotlin_github.mvp.m.entity.Repository
 import com.devyk.kotlin_github.mvp.v.RepoDetailActivity
 import kotlinx.android.synthetic.main.item_repo.view.*
 import org.jetbrains.anko.newTask
-import org.jetbrains.anko.startActivity
 
 /**
  * <pre>
@@ -24,7 +24,7 @@ import org.jetbrains.anko.startActivity
  *     desc    : This is RepoListAdapter
  * </pre>
  */
-class RepoListAdapter : CommonListAdapter<Repository>(R.layout.item_repo) {
+class RepoListAdapter() : CommonListAdapter<Repository>(R.layout.item_repo) {
     override fun onBindData(viewHolder: RecyclerView.ViewHolder, repository: Repository) {
         viewHolder.itemView.apply {
             avatarView.loadWithGlide(repository.owner.avatar_url, repository.owner.login.first())
@@ -37,13 +37,14 @@ class RepoListAdapter : CommonListAdapter<Repository>(R.layout.item_repo) {
     }
 
     override fun onItemClicked(itemView: View, item: Repository) {
-        var intent = Intent(App.getInstance(), RepoDetailActivity::class.java).apply {
-            var bundle = Bundle()
-            newTask()
-            bundle.putParcelable("repository", item)
-            putExtras(bundle)
-        }
+        var intent = Intent(App.getInstance(), RepoDetailActivity::class.java);
+        intent.newTask()
+        var bundle = Bundle()
+        bundle.putParcelable("repository", item)
+        intent.putExtras(bundle)
+
         App.getInstance().applicationContext.startActivity(intent)
+
     }
 
 }

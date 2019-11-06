@@ -3,9 +3,7 @@ package com.devyk.kotlin_github.mvp.v.repo
 import com.bennyhuo.github.network.entities.User
 import com.devyk.common.ext.bindArgument
 import com.devyk.kotlin_github.adapter.RepoListAdapter
-import com.devyk.kotlin_github.mvp.base.CommonListAdapter
 import com.devyk.kotlin_github.mvp.base.CommonListFragment
-import com.devyk.kotlin_github.mvp.m.AccountManager
 import com.devyk.kotlin_github.mvp.m.entity.Repository
 import com.devyk.kotlin_github.mvp.p.RepoListPresenter
 

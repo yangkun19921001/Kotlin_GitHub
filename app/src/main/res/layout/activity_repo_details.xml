@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include layout="@layout/app_bar_details"/>
+
+    <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:id="@+id/detailContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="24dp">
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <com.devyk.kotlin_github.widget.DetailItemView
+                            android:id="@+id/stars"
+                            app:item_icon="@drawable/ic_people"
+                            app:item_title="Star"
+                            app:item_content=""
+                            app:item_op_icon="@drawable/sel_star"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    <com.devyk.kotlin_github.widget.DetailItemView
+                            android:id="@+id/watches"
+                            app:item_icon="@drawable/ic_people"
+                            app:item_title="Watch"
+                            app:item_content=""
+                            android:layout_weight="1"
+                            app:item_op_icon="@drawable/sel_watch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <com.devyk.kotlin_github.widget.DetailItemView
+                        android:id="@+id/owner"
+                        app:item_icon="@drawable/ic_people"
+                        app:item_title="Owner"
+                        app:item_content="enbandari"
+                        app:item_op_icon="@drawable/ic_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <com.devyk.kotlin_github.widget.DetailItemView
+                        android:id="@+id/issues"
+                        app:item_icon="@drawable/ic_issue"
+                        app:item_title="Issue"
+                        app:item_content=""
+                        app:item_op_icon="@drawable/ic_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <com.devyk.kotlin_github.widget.DetailItemView
+                        android:id="@+id/forks"
+                        app:item_icon="@drawable/ic_people"
+                        app:item_title="Fork"
+                        app:item_content=""
+                        app:item_op_icon="@drawable/ic_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <com.devyk.kotlin_github.widget.DetailItemView
+                        android:id="@+id/code"
+                        app:item_icon="@drawable/ic_issue"
+                        app:item_title="Code"
+                        app:item_content=""
+                        app:item_op_icon="@drawable/ic_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <FrameLayout
+                    android:id="@+id/loadingView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:indeterminateTintMode="src_atop"
+                        android:indeterminateTint="@color/colorAccent"
+                        android:layout_gravity="center" />
+            </FrameLayout>
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
