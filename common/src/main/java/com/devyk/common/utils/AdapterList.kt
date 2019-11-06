@@ -2,9 +2,7 @@ package com.devyk.common.utils
 
 import android.support.v7.widget.RecyclerView
 
-/**
- * Created by benny on 7/9/17.
- */
+
 class AdapterList<T>(val adapter: RecyclerView.Adapter<*>): ArrayList<T>(){
     override fun removeAt(index: Int): T {
         return super.removeAt(index).apply { adapter.notifyItemRemoved(index) }

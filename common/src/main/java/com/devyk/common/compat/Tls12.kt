@@ -9,9 +9,7 @@ import okhttp3.TlsVersion
 import javax.net.ssl.SSLContext
 
 
-/**
- * Created by benny on 2018/4/25.
- */
+
 fun OkHttpClient.Builder.enableTls12OnPreLollipop(): OkHttpClient.Builder {
     if (Build.VERSION.SDK_INT in 16..21) {
         try {

@@ -14,9 +14,7 @@ import okhttp3.Interceptor.Chain
 import okhttp3.Response
 import java.util.concurrent.TimeUnit
 
-/**
- * Created by benny on 2/4/18.
- */
+
 class CacheInterceptor : Interceptor {
     override fun intercept(chain: Chain): Response {
         var request = chain.request()

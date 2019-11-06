@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import org.jetbrains.anko.*
 
-/**
- * Created by benny on 7/15/17.
- */
+
 class ErrorInfoView(val parentView: ViewGroup) : _RelativeLayout(parentView.context) {
 
     private var textView: TextView
