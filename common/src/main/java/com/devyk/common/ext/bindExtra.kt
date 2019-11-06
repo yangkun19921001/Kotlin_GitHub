@@ -21,6 +21,8 @@ private class IntentDelegate<in U, out T>(private val key: String) : ReadOnlyPro
         }
     }
 
+
+
 }
 
 class BindLoader<in U, out T>(private val key: String) {

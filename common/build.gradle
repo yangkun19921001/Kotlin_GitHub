@@ -93,13 +93,12 @@ dependencies {
     api 'org.slf4j:slf4j-api:1.7.21'
 
     /* 源码地址：https://github.com/enbandari/RichText；这个项目是从 https://github.com/zzhoujay/RichText 修改而来的
-<p>原因：原框架使用了  Android 系统的 Html 解析器，对 pre 和 code 没有支持
-框架中使用了修改自 https://github.com/Pixplicity/HtmlCompat 的 Html 解析器
-*/
+    <p>原因：原框架使用了  Android 系统的 Html 解析器，对 pre 和 code 没有支持
+    框架中使用了修改自 https://github.com/Pixplicity/HtmlCompat 的 Html 解析器
+    */
     implementation('com.github.enbandari.RichText:richtext:e85882c698') {
         exclude(group: "com.android.support")
     }
-
 
 
 }

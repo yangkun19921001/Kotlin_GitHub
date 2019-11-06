@@ -1,7 +1,10 @@
 package com.devyk.kotlin_github.mvp.v.people
 
+import android.os.Bundle
 import com.devyk.kotlin_github.mvp.base.CommonViewPagerFragment
 import com.devyk.kotlin_github.mvp.base.FragmentPage
+import com.devyk.kotlin_github.mvp.m.AccountManager
+import com.devyk.kotlin_github.mvp.m.PeoplePage
 
 /**
  * <pre>
@@ -21,10 +24,10 @@ class PeopleFragment : CommonViewPagerFragment() {
     override fun getFragmentPagesNotLoggedIn(): List<FragmentPage> {
         return listOf(
             FragmentPage(PeopleListFragment().also {
-            }, "Followers"),
-            FragmentPage(PeopleListFragment().also {
-            }, "Following"),
-            FragmentPage(PeopleListFragment().also {
+                it.arguments = Bundle().apply {
+                    putString("type", PeoplePage.Type.ALL.name)
+
+                }
             }, "All")
         )
     }
@@ -36,6 +39,22 @@ class PeopleFragment : CommonViewPagerFragment() {
         //alse 会返回自身引用
         return listOf(
             FragmentPage(PeopleListFragment().also {
+                it.arguments = Bundle().apply {
+                    putString("login", AccountManager.currentUser?.login)
+                    putString("type", PeoplePage.Type.FOLLOWER.name)
+                }
+            }, "Followers"),
+            FragmentPage(PeopleListFragment().also {
+                it.arguments = Bundle().apply {
+                    putString("login", AccountManager.currentUser?.login)
+                    putString("type", PeoplePage.Type.FOLLOWING.name)
+                }
+            }, "Following"),
+            FragmentPage(PeopleListFragment().also {
+                it.arguments = Bundle().apply {
+                    putString("login", AccountManager.currentUser?.login)
+                    putString("type", PeoplePage.Type.ALL.name)
+                }
             }, "All")
         )
     }

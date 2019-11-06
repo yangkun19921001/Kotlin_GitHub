@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:transitionName="userHead">
+
+    <com.devyk.common.weiget.AppCompatAvatarImageView
+        android:id="@+id/avatarView"
+        style="@style/list_item_avatar"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/ic_github"/>
+
+    <TextView
+        android:id="@+id/nameView"
+        style="@style/list_item_title"
+        android:padding="10dp"
+        android:layout_toRightOf="@id/avatarView"
+        android:layout_centerVertical="true"
+        tools:text="Foo"/>
+
+</RelativeLayout>
