@@ -3,6 +3,7 @@ package com.devyk.kotlin_github.mvp.v
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.view.Menu
 import com.bennyhuo.common.log.logger
 import com.bennyhuo.github.network.entities.User
 import com.bennyhuo.github.view.widget.ActionBarController
@@ -20,8 +21,10 @@ import com.devyk.kotlin_github.mvp.v.login.LoginActivity
 import com.devyk.kotlin_github.widget.NavigationController
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.menu_item_daynight.view.*
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import org.jetbrains.anko.sdk15.coroutines.onCheckedChange
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -139,5 +142,19 @@ class MainActivity : BaseActivity<MainPersenter>(), OnAccountStateChangeLister {
 
     override fun onLogOut() {
         navigationController.useNoLoginLayout()
+    }
+
+    /**
+     * 用于切换主题
+     */
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.activity_actionbar,menu)
+        menu.findItem(R.id.dayNight).actionView.dayNightSwitch.apply {
+            isChecked = Themer.currentTheme() ==Themer.ThemeMode.DAY
+
+            onCheckedChange { buttonView, isChecked -> Themer.toggle(this@MainActivity) }
+        }
+
+        return true
     }
 }
