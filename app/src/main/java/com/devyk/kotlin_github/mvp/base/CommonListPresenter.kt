@@ -1,6 +1,6 @@
 package com.devyk.kotlin_github.mvp.base
 
-import com.bennyhuo.mvp.impl.BasePresenter
+import BasePresenter
 import com.devyk.common.ext.otherwise
 import com.devyk.common.ext.yes
 import io.reactivex.disposables.Disposable

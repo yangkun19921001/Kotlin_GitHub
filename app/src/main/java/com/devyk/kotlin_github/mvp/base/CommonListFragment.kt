@@ -1,16 +1,12 @@
 package com.devyk.kotlin_github.mvp.base
 
+import BaseFragment
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import com.bennyhuo.mvp.impl.BaseFragment
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
 import com.devyk.common.weiget.ErrorInfoView
 import com.devyk.kotlin_github.R
 import com.github.jdsjlzx.recyclerview.LuRecyclerViewAdapter

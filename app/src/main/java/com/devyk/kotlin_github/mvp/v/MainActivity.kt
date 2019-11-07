@@ -1,5 +1,6 @@
 package com.devyk.kotlin_github.mvp.v
 
+import BaseActivity
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -7,7 +8,6 @@ import android.view.Menu
 import com.bennyhuo.common.log.logger
 import com.bennyhuo.github.network.entities.User
 import com.bennyhuo.github.view.widget.ActionBarController
-import com.bennyhuo.mvp.impl.BaseActivity
 import com.devyk.common.config.UserInfo
 import com.devyk.common.ext.*
 import com.devyk.kotlin_github.R

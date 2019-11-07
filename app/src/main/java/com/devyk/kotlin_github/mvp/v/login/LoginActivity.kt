@@ -1,12 +1,11 @@
 package com.devyk.kotlin_github.mvp.v.login
 
+import BaseActivity
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import com.bennyhuo.common.ext.hideSoftInput
-import com.bennyhuo.mvp.impl.BaseActivity
 import com.devyk.common.config.UserInfo
 import com.devyk.common.ext.otherwise
 import com.devyk.common.ext.yes

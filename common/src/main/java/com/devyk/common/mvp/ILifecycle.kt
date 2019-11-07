@@ -1,4 +1,3 @@
-package com.bennyhuo.mvp
 
 import android.content.res.Configuration
 import android.os.Bundle

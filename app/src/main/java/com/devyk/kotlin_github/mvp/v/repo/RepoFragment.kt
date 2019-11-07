@@ -2,7 +2,6 @@ package com.devyk.kotlin_github.mvp.v.repo
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import com.bennyhuo.mvp.impl.BaseFragment
 import com.devyk.kotlin_github.mvp.base.CommonViewPagerFragment
 import com.devyk.kotlin_github.mvp.base.FragmentPage
 import com.devyk.kotlin_github.mvp.m.AccountManager

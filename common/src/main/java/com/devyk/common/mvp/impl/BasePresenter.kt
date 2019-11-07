@@ -1,9 +1,6 @@
-package com.bennyhuo.mvp.impl
 
 import android.content.res.Configuration
 import android.os.Bundle
-import com.bennyhuo.mvp.IMvpView
-import com.bennyhuo.mvp.IPresenter
 
 abstract class BasePresenter<out V: IMvpView<BasePresenter<V>>>: IPresenter<V> {
 

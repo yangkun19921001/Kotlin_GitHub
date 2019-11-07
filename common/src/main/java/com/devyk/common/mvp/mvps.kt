@@ -1,4 +1,3 @@
-package com.bennyhuo.mvp
 
 interface IPresenter<out View : IMvpView<IPresenter<View>>> : ILifecycle {
     val v: View
